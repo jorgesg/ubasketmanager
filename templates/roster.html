@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>My Team</h1>
+    
+    <div class="row">
+        <div id="guard1" class="col-md-2 col-sm-2 col-xs-2 guard1 card" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {{currentTeam.guard1.name}}
+        </div>
+        <div id="guard2" class="col-md-2 col-sm-2 col-xs-2 guard2 card" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {{currentTeam.guard2.name}}
+        </div>
+        <div id="forward1" class="col-md-2 col-sm-2 col-xs-2 forward1 card" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {{currentTeam.forward1.name}}
+        </div>
+        <div id="forward2" class="col-md-2 col-sm-2 col-xs-2 forward2 card" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {{currentTeam.forward2.name}}
+        </div>
+        <div id="center" class="col-md-2 col-sm-2 col-xs-2 center card" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {{currentTeam.center.name}}
+        </div>
+        <div id="sixthman" class="col-md-2 col-sm-2 col-xs-2 sixthman card" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {{currentTeam.sixthman.name}}
+        </div>
+        <div id="coach" class="col-md-2 col-sm-2 col-xs-2 coach card" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {{currentTeam.coach.name}}
+        </div>
+        <button onclick="saveChanges()">Save Changes</button>
+    </div>
+    
+    <h2>Roster</h2>
+    <div class="row">
+        <ul class="list-group rosterlist">
+            <li ng-repeat="card in roster" class="list-group-item">
+                <span id="{{card.name}}" draggable="true" ondragstart="drag(event)" class="{{card.type}}">{{ card.name }} {{ card.ovr }}</span>
+            </li>
+        </ul>
+    </div>
+    
+</div>

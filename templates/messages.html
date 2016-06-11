@@ -1,0 +1,47 @@
+<div class="fill">
+    <div class="col-md-3 col-sm-3 col-xs-3 friends">
+        <h3>Friends</h3>
+        <div class='input-group'>
+            <input ng-model='postBody' class='form-control' placeholder='Search for other users'/>
+            <span class='input-group-btn'>
+            <button ng-Click='addPost()' class='btn btn-default'>
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+            </span>
+            </div>
+        <ul class="list-group listfriends">
+            <li ng-repeat="friend in listFriends" class="list-group-item"> <span>{{ friend }}</span> <span class="li-right"><a ng-click="conversation(friend)" href="" class="li-center">Mensaje</a><a href="/#/">Eliminar</a></span></li>
+        </ul>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-9 conversation">
+        <h3 id="conv-name">Friends</h3>
+        
+        <div class="messages"> 
+            <ul class="list-group">
+                <div ng-repeat="msg in currentConversation | orderBy:'date'">
+                    <div ng-if="currentUser.username==msg.emisor">
+                        <li class="list-group-item conv-item emisor">
+                            <span class="emisor-text">{{ msg.textBody }}</span>
+                        </li>
+                    </div>
+                    <div ng-if="currentUser.username!=msg.emisor">
+                        <li class="list-group-item conv-item receptor">
+                            <span class="receptor-text">{{ msg.textBody }}</span>
+                        </li>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        
+        <form role='form'>
+            <div class='form-group input-msg'>
+                <div class='input-group'>
+                    <input ng-model='textBody' class='form-control' />
+                    <span class='input-group-btn'>
+                    <button ng-Click='sendMsg()' class='btn btn-default'>Send</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
