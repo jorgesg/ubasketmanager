@@ -28,11 +28,95 @@
     
     <h2>Roster</h2>
     <div class="row">
-        <ul class="list-group rosterlist">
-            <li ng-repeat="card in roster" class="list-group-item">
-                <span id="{{card.name}}" draggable="true" ondragstart="drag(event)" class="{{card.type}}">{{ card.name }} {{ card.ovr }}</span>
-            </li>
-        </ul>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <!-- Accordion Element 1 -->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Guards
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="list-group">
+                      <li ng-repeat="card in roster | filter: card.pos='guard'" class="list-group-item">
+                        <span id="{{card.name}}" draggable="true" ondragstart="drag(event)" class="{{card.type}}">{{ card.name }} {{ card.ovr }}</span>
+                      </li>
+                  </div>
+                </div>
+            </div>
+            <!-- Accordion Element 2 -->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Forwards
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="list-group">
+                    <li ng-repeat="card in roster | filter: card.pos='forward'" class="list-group-item">
+                        <span id="{{card.name}}" draggable="true" ondragstart="drag(event)" class="{{card.type}}">{{ card.name }} {{ card.ovr }}</span>
+                    </li>
+                  </div>
+                </div>
+            </div>
+            <!-- Accordion Element 3 -->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Centers
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="list-group">
+                    <li ng-repeat="card in roster | filter: card.pos='center'" class="list-group-item">
+                        <span id="{{card.name}}" draggable="true" ondragstart="drag(event)" class="{{card.type}}">{{ card.name }} {{ card.ovr }}</span>
+                    </li>
+                  </div>
+                </div>
+            </div>
+            <!-- Accordion Element 4 -->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Sixth Men
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="list-group">
+                    <li ng-repeat="card in roster | filter: card.pos='6Man'" class="list-group-item">
+                        <span id="{{card.name}}" draggable="true" ondragstart="drag(event)" class="{{card.type}}">{{ card.name }} {{ card.ovr }}</span>
+                    </li>
+                  </div>
+                </div>
+            </div>
+            <!-- Accordion Element 5 -->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFive">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Centers
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                  <div class="list-group">
+                    <li ng-repeat="card in roster | filter: card.pos='coach'" class="list-group-item">
+                        <span id="{{card.name}}" draggable="true" ondragstart="drag(event)" class="{{card.type}}">{{ card.name }} {{ card.ovr }}</span>
+                    </li>
+                  </div>
+                </div>
+            </div>
+            
+        </div>
+        
     </div>
     
 </div>
