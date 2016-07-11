@@ -1,26 +1,27 @@
 {
-    "name": "ubasketmanager",
-    "version": "1.0.0",
-    "engines": {
-        "node": "6.2.1"
-    },
-    "scripts": {
-        "start": "node server.js",
-        "postinstall": "gulp build"
-    },
-    "dependencies": {
-        "bcrypt": "^0.8.6",
-        "body-parser": "^1.15.0",
-        "ejs": "^2.4.2",
-        "express": "^4.13.4",
-        "gulp": "^3.9.1",
-        "gulp-concat": "^2.6.0",
-        "gulp-ng-annotate": "^2.0.0",
-        "gulp-nodemon": "^2.0.6",
-        "gulp-sourcemaps": "^2.0.0-alpha",
-        "gulp-stylus": "^2.3.1",
-        "gulp-uglify": "^1.5.3",
-        "jwt-simple": "^0.5.0",
-        "mongoose": "^4.4.5"
-    }
+  "name": "ubasketmanager",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.2.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "gulp build"
+  },
+  "dependencies": {
+    "angular-material": "^1.1.0-rc.5",
+    "bcrypt": "^0.8.6",
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-stylus": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "jwt-simple": "^0.5.0",
+    "mongoose": "^4.4.5"
+  }
 }

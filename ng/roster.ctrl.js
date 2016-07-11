@@ -39,48 +39,62 @@ angular.module('app')
         var data = JSON.parse(ev.dataTransfer.getData("card"))
         var index = getRosterIndex(data)
         if(data.pos=="Guard"){
-            if(ev.target.getAttribute("id")=="guard1"){
+            if(ev.target.getAttribute("class")=="card1-img"||ev.target.getAttribute("id")=="guard1"||ev.target.getAttribute("id")=="guard1-name"||ev.target.getAttribute("id")=="guard1-ovr"){
                 $scope.roster.splice(index, 1, data)
                 $scope.currentTeam.guard1 = data
-                ev.target.textContent = data.name
+                document.getElementById("guard1-name").textContent = data.name
+                document.getElementById("guard1-ovr").textContent = data.ovr
+                  
             }
-            else if(ev.target.getAttribute("id")=="guard2"){
+            else if(ev.target.getAttribute("class")=="card2-img"||ev.target.getAttribute("id")=="guard2"||ev.target.getAttribute("id")=="guard2-name"||ev.target.getAttribute("id")=="guard2-ovr"){
                 $scope.roster.splice(index, 1, data)
                 $scope.currentTeam.guard2 = data
-                ev.target.textContent = data.name
+                document.getElementById("guard2-name").textContent = data.name
+                document.getElementById("guard2-ovr").textContent = data.ovr
+                        
             }
         }
         else if(data.pos=="Forward"){
-            if(ev.target.getAttribute("id")=="forward1"){
+            if(ev.target.getAttribute("class")=="card3-img"||ev.target.getAttribute("id")=="forward1"||ev.target.getAttribute("id")=="forward1-name"||ev.target.getAttribute("id")=="forward1-ovr"){
                 $scope.roster.splice(index, 1, data)
                 $scope.currentTeam.forward1 = data
-                ev.target.textContent = data.name
+                document.getElementById("forward1-name").textContent = data.name
+                document.getElementById("forward1-ovr").textContent = data.ovr
+                 
             }
-            else if(ev.target.getAttribute("id")=="forward2"){
+            else if(ev.target.getAttribute("class")=="card4-img"||ev.target.getAttribute("id")=="forward2"||ev.target.getAttribute("id")=="forward2-name"||ev.target.getAttribute("id")=="forward2-ovr"){
                 $scope.roster.splice(index, 1, data)
                 $scope.currentTeam.forward2 = data
-                ev.target.textContent = data.name
+                document.getElementById("forward2-name").textContent = data.name
+                document.getElementById("forward2-ovr").textContent = data.ovr
+                   
             }
         }
         else if(data.pos=="Center"){
-            if(ev.target.getAttribute("id")=="center"){
+            if(ev.target.getAttribute("class")=="card5-img"||ev.target.getAttribute("id")=="center"||ev.target.getAttribute("id")=="center-name"||ev.target.getAttribute("id")=="center-ovr"){
                 $scope.roster.splice(index, 1, data)
                 $scope.currentTeam.center = data
-                ev.target.textContent = data.name
+                document.getElementById("center-name").textContent = data.name
+                document.getElementById("center-ovr").textContent = data.ovr
+                   
             }
         }
         else if(data.pos=="6Man"){
-            if(ev.target.getAttribute("id")=="sixthman"){
+            if(ev.target.getAttribute("class")=="card6-img"||ev.target.getAttribute("id")=="sixthman"||ev.target.getAttribute("id")=="sixthman-name"||ev.target.getAttribute("id")=="sixthman-ovr"){
                 $scope.roster.splice(index, 1, data)
                 $scope.currentTeam.sixthman = data
-                ev.target.textContent = data.name
+                document.getElementById("sixthman-name").textContent = data.name
+                document.getElementById("sixthman-ovr").textContent = data.ovr
+                    
             }
         }
         else if(data.pos=="Coach"){
-            if(ev.target.getAttribute("id")=="coach"){
+            if(ev.target.getAttribute("class")=="card7-img"||ev.target.getAttribute("id")=="coach"||ev.target.getAttribute("id")=="coach-name"||ev.target.getAttribute("id")=="coach-ovr"){
                 $scope.roster.splice(index, 1, data)
                 $scope.currentTeam.coach = data
-                ev.target.textContent = data.name
+                document.getElementById("coach-name").textContent = data.name
+                document.getElementById("coach-ovr").textContent = data.ovr
+                   
             }
         }
     }
